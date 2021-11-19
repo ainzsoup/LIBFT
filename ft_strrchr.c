@@ -6,7 +6,7 @@
 /*   By: sgamraou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:18:36 by sgamraou          #+#    #+#             */
-/*   Updated: 2021/11/12 18:12:17 by sgamraou         ###   ########.fr       */
+/*   Updated: 2021/11/19 17:03:19 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ char	*ft_strrchr(const char *s, int c)
 /*int main()
 {
   
-   const char str[] = "i'm slightly dumb";
-   const char ch = 'm';
+   const char str[] = "bonjour";
+   const char ch = 's';
    char *ret;
 
    ret = ft_strrchr(str, ch);
