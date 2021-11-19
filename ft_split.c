@@ -57,7 +57,7 @@ static int	w_len(char *str, char c, int i)
 	return (len);
 }
 
-char	**fill(char **res, const char *str, char c)
+static char	**fill(char **res, const char *str, char c)
 {
 	int	i;
 	int	j;
