@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	lend;
 	size_t	i;
 
+	if (!dst && src[0] == '\0' && dstsize == 0)
+		return (0);
 	lens = ft_strlen((char *)src);
 	lend = ft_strlen((char *)dst);
 	i = 0;
@@ -31,3 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[lend + i] = '\0';
 	return (lend + lens);
 }
+// int main()
+// {
+// 	printf("%lu", ft_strlcat(NULL, "", 0));
+// }
