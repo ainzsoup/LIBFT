@@ -6,7 +6,7 @@
 /*   By: sgamraou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:18:36 by sgamraou          #+#    #+#             */
-/*   Updated: 2021/11/19 17:03:19 by sgamraou         ###   ########.fr       */
+/*   Updated: 2021/11/20 13:19:38 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strrchr(const char *s, int c)
 
    ret = ft_strrchr(str, ch);
 
-   printf("String after |%c| is - |%s|\n", ch, ret);
+   printf("%s", ret);
    
    return(0);
 }*/
