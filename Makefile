@@ -6,7 +6,7 @@
 #    By: sgamraou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 16:18:21 by sgamraou          #+#    #+#              #
-#    Updated: 2021/11/19 16:47:13 by sgamraou         ###   ########.fr        #
+#    Updated: 2021/11/20 13:10:49 by sgamraou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,10 @@ CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) libft.h
 	ar rc $(NAME) $(OBJS)
 
-bonus : $(B_OBJS)
+bonus : $(B_OBJS) libft.h
 	ar rc $(NAME) $(B_OBJS)
 
 clean:
