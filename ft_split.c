@@ -12,36 +12,23 @@
 
 #include "libft.h"
 
-static int	is_sep(char c, char d)
-{
-	if (c == d)
-		return (1);
-	return (0);
-}
-
 static int	x_words(char *str, char c)
 {
+	int	count;
 	int	i;
-	int	new_word;
-	int	x;
 
 	i = 0;
-	new_word = 0;
-	x = 0;
-	if (str[i] == '\0')
-		return (0);
-	while (str[i] != '\0')
+	count = 0;
+	while (str[i])
 	{
-		if (is_sep(str[i], c) == 1)
-			new_word = 0;
-		else if (new_word == 0)
-		{
-			new_word = 1;
-			x++;
-		}
-		i++;
+		while (str[i] == c)
+			i++;
+		if (str[i] != c && str[i])
+			count++;
+		while (str[i] != c && str[i])
+			i++;
 	}
-	return (x);
+	return (count);
 }
 
 static int	w_len(char *str, char c, int i)
@@ -49,7 +36,7 @@ static int	w_len(char *str, char c, int i)
 	int	len;
 
 	len = 0;
-	while (is_sep(str[i], c) == 0 && str[i] != '\0')
+	while (str[i] != c && str[i])
 	{
 		len++;
 		i++;
@@ -57,7 +44,21 @@ static int	w_len(char *str, char c, int i)
 	return (len);
 }
 
-static char	**fill(char **res, const char *str, char c)
+static char	**free_all(char **str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (NULL);
+}
+
+static char	**fill_strings(char **res, const char *str, char c)
 {
 	int	i;
 	int	j;
@@ -65,18 +66,15 @@ static char	**fill(char **res, const char *str, char c)
 
 	i = 0;
 	j = 0;
-	while (str[i] != '\0' && j < x_words((char *)str, c))
+	while (j < x_words((char *)str, c))
 	{
 		k = 0;
-		while (is_sep(str[i], c) == 1)
+		while (str[i] == c)
 			i++;
 		res[j] = (char *)malloc(sizeof(char) * (w_len((char *)str, c, i) + 1));
 		if (!res)
-		{
-			free (res[j]);
-			return (NULL);
-		}
-		while (is_sep(str[i], c) == 0 && str[i] != '\0')
+			return (free_all(res));
+		while (str[i] != c && str[i])
 			res[j][k++] = str[i++];
 		res [j][k] = '\0';
 		j++;
@@ -94,7 +92,7 @@ char	**ft_split(char const *str, char c)
 	res = (char **) malloc (sizeof (char *) * (x_words((char *)str, c) + 1));
 	if (!res)
 		return (NULL);
-	return (fill(res, str, c));
+	return (fill_strings(res, str, c));
 }
 
 /*int main()
