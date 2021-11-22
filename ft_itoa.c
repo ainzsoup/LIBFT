@@ -29,33 +29,12 @@ static int	f_len(int n)
 	return (count);
 }
 
-static char	*ft_parttwo(int n, char *res, int i, int len)
-{
-	if (n < 0)
-	{
-		res[0] = '-';
-		n = n * -1;
-		i++;
-	}
-	if (n == 0)
-	{
-		res[0] = '0';
-		return (res);
-	}
-	while (len > i)
-	{
-		res[len - 1] = (n % 10) + '0';
-		n = n / 10;
-		len--;
-	}
-	return (res);
-}
-
 char	*ft_itoa(int n)
 {
-	char	*res;
-	int		len;
-	int		i;
+	char			*res;
+	int				len;
+	int				i;
+	unsigned int	nu;
 
 	i = 0;
 	len = f_len(n);
@@ -63,18 +42,25 @@ char	*ft_itoa(int n)
 	if (!res)
 		return (NULL);
 	res[len] = '\0';
-	if (n == -2147483648)
+	if (n < 0)
 	{
-		ft_memcpy(res, "-2147483648", 11);
-		return (res);
+		res[0] = '-';
+		n = n * -1;
+		i++;
 	}
-	return (ft_parttwo(n, res, i, len));
+	nu = (unsigned int)n;
+	while (len > i)
+	{
+		res[len - 1] = (nu % 10) + '0';
+		nu = nu / 10;
+		len--;
+	}
+	return (res);
 }
 
-/*int main()
-{
-	char	*str = ft_itoa(-2147483648);
-	printf("%s", str);
-	return 0;
-}
-*/
+// int main()
+// {
+// 	char	*str = ft_itoa(+2147483647);
+// 	printf("%s", str);
+// 	return 0;
+// }

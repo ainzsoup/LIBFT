@@ -18,3 +18,8 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
+// int main()
+// {	
+// 	printf((ft_isalpha(48) == 1) ? "is alpha" : "is not alpha");
+// 	return 0;
+// }

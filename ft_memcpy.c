@@ -30,3 +30,13 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+// int main()
+// {
+// 	int src[] = {-12, 89, 45, 98, 73, 13};
+// 	int dst[] = {1, 1, 1, 1, 1, 1};
+// 	ft_memcpy(dst, src, 12);
+// 	int i = 0;
+// 	while (i < 6)
+// 		printf("[%d]	", dst[i++]);
+// 	return 0;
+// }

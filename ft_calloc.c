@@ -22,3 +22,25 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(ptr, size * count);
 	return (ptr);
 }
+
+// int main()
+// {
+// 	int	*ptr;
+// 	int n = 3;
+// 	ptr = (int *)ft_calloc(n, sizeof(int));
+
+// 	if (ptr == NULL)
+// 	{
+// 		printf("Memory not allocated.\n");
+// 		return 0;
+// 	}
+// 	else 
+// 	{
+// 		printf("Memory successfully allocated lesgoooo!! \n");
+// 		for (int i = 0; i < n; i++)
+// 			ptr[i] = i + 1;		
+// 		for (int i = 0; i < n; i++)
+// 			printf("[%d]	", ptr[i]);
+// 	}
+// 	return 0;
+// }

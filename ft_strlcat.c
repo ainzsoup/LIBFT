@@ -35,5 +35,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 }
 // int main()
 // {
-// 	printf("%lu", ft_strlcat(NULL, "", 0));
+// 	char	a[] = "sohaib";
+// 	printf("%lu", strlcat(a, "gam", -3));
 // }
