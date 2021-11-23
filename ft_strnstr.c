@@ -21,17 +21,18 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	if (*s2 == '\0')
 		return ((char *)s1);
 	len2 = ft_strlen((char *)s2);
-	while (*s1 != '\0' && len-- >= len2)
+	while (*s1 != '\0' && len >= len2)
 	{
-		if (*s1 == *s2 && ft_strncmp(s1, s2, len2) == 0)
+		if (ft_strncmp(s1, s2, len2) == 0)
 			return ((char *)s1);
 		s1++;
+		len--;
 	}
 	return (NULL);
 }
 
 // int main()
-// {
+// 
 // 	char *str = ft_strnstr(0, "fake", 0);
 // 	// char *str2 = strnstr(0, "fake", 0);
 // 	// printf("%s\n", str2);

@@ -32,8 +32,8 @@ all : $(NAME)
 $(NAME): $(OBJS) libft.h
 	ar rc $(NAME) $(OBJS)
 
-bonus : $(B_OBJS) libft.h
-	ar rc $(NAME) $(B_OBJS)
+bonus : $ $(OBJS) $(B_OBJS) libft.h
+	ar rc $(NAME) $(OBJS) $(B_OBJS)
 
 clean:
 	rm -f $(OBJS) $(B_OBJS)
