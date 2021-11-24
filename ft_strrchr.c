@@ -14,21 +14,21 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	size_t	len;
 
-	i = ft_strlen((char *)s);
+	len = ft_strlen((char *)s);
 	if (!s)
 		return (NULL);
 	if (c >= 256)
 		c -= 256;
-	while (i > 0)
+	while (len > 0)
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i--;
+		if (s[len] == c)
+			return ((char *)s + len);
+		len--;
 	}
-	if (s[i] == c)
-		return ((char *)s + i);
+	if (s[len] == c)
+		return ((char *)s + len);
 	return (NULL);
 }
 
