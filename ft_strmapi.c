@@ -33,3 +33,18 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
+
+/*char ft_f(unsigned int n, char c)
+{
+	if (n >= 0)
+		return(ft_toupper(c));
+	else 
+		return ('c');
+}
+int main()
+{
+	char *s = "sohaib";
+	char *res = ft_strmapi(s, &ft_f);
+	printf("%s/n", res);
+	return 0;
+}*/

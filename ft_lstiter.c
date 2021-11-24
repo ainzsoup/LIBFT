@@ -25,18 +25,24 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	lst = NULL;
 }
 
-/*void	f(void *content)
+/*void	ft_f(void *content)
 {
 	int i = 0;
-	content = &i;
+	char *s;
+	s = (char *)(content);
+	while (s[i])
+	{
+		s[i] = ft_toupper(s[i]);
+		i++;
+	}
 }
 
-void	print(t_list *head)
+void print(t_list *list)
 {
-	while(head)
+	while (list)
 	{
-		printf("%d-->", *(int *)head->content);
-		head = head->next;
+		printf("[%s]-->", list->content);
+		list = list->next;
 	}
 	printf("NULL\n");
 }
@@ -45,23 +51,17 @@ int main()
 {
 	t_list	*list;
 
-	int i, j, k;
+	char	f[8] = "first";
+	char	s[8] = "second";
+	char 	t[8] = "third";
 
-	i = 0; j = 1; k = 2;
+	list = NULL;
 
-	t_list a, b, c;
-
-	list = &a;
-	a.next = &b;
-	b.next = &c;
-	c.next = NULL;
-
-	a.content = &i;
-	b.content = &j;
-	c.content = &k;
-	print (list);
-	ft_lstiter(list, f);
-	print (list);
+	ft_lstadd_back(&list, ft_lstnew(f));
+	ft_lstadd_back(&list, ft_lstnew(s));
+	ft_lstadd_back(&list, ft_lstnew(t));
+	print(list);
+	ft_lstiter(list, &ft_f);
+	print(list);
 	return 0;
-
 }*/

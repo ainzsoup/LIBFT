@@ -24,3 +24,43 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 	*lst = NULL;
 }
+
+/*void ft_del(void *content)
+{
+	free (content);
+}
+
+void print_list(t_list *list)
+{
+	printf("the content of our list: ");
+	while (list)
+	{
+		printf("|%s| ", list->content);
+		list = list->next;
+	}
+	printf("\n");
+}
+
+int	main()
+{
+	t_list *list;
+	char	*f;
+	char	*s;
+	char	*t;
+
+	f = malloc(7);
+	s = malloc(7);
+	t = malloc (7);
+
+	ft_strlcpy(f, "first", 7);
+	ft_strlcpy(s, "second", 7);
+	ft_strlcpy(t, "third", 7);
+
+	list = NULL;
+	ft_lstadd_back(&list, ft_lstnew(f));
+	ft_lstadd_back(&list, ft_lstnew(s));
+	ft_lstadd_back(&list, ft_lstnew(t));
+	print_list(list);
+	ft_lstclear(&list, &ft_del);
+	print_list(list);
+}*/

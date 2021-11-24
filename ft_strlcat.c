@@ -33,8 +33,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[lend + i] = '\0';
 	return (lend + lens);
 }
+
 // int main()
 // {
 // 	char	a[] = "sohaib";
-// 	printf("%lu", strlcat(a, "gam", 9));
+// 	ft_strlcat(a, "gam", 9);
+// 	printf("%s\n", a);
 // }

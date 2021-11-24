@@ -33,3 +33,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	return (i);
 }
+
+/*int main ()
+{
+	char dest[10];
+	char src[8] = "sohaib";
+	size_t n = ft_strlcpy (dest, src, sizeof(dest));
+
+	printf("%lu\n", n);
+	return 0;
+}*/
