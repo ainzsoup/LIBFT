@@ -12,32 +12,41 @@
 
 #include "libft.h"
 
+static	int	thewhitevoid(char c)
+{
+	if (c == ' ' || c == '\n' || c == '\t'
+		|| c == '\v' || c == '\f' || c == '\r')
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
 	int				i;
-	unsigned int	res;
+	unsigned long	res;
 	int				sign;
 
 	i = 0;
 	res = 0;
 	sign = 1;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	while (thewhitevoid(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign = sign * -1;
+			sign *= -1;
 		i++;
 	}
-	if (str[i] < '0' || str[i] > '9')
-		return (0);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = res * 10 - (str[i] - '0');
+		if (res > 9223372036854775807 && sign == -1)
+			return (0);
+		if (res >= 9223372036854775807 && sign == 1)
+			return (-1);
+		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
-	return (res * -sign);
+	return (res * sign);
 }
 
 /*int main ()

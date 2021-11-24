@@ -28,16 +28,11 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-/*int main()
-{
-    char src[] = "substr function Implementation";
- 
-    int m = 7;
-    int n = 12;
- 
-    char* dest = ft_substr(src, m, n);
- 
-    printf("%s\n", dest);
- 
-    return 0;
-}*/
+
+// int main()
+// {
+//     char src[] = "substr function Implementation";
+//     char* dest = substr(src, 2, 2555555555555555);
+//     printf("%s\n", dest);
+//     return 0;
+// }

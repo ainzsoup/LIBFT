@@ -20,6 +20,8 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	str = (char *)s;
+	if (c >= 256)
+		c = c - 256;
 	while (str[i] != c)
 	{
 		if (!str[i])
@@ -29,14 +31,9 @@ char	*ft_strchr(const char *s, int c)
 	return (&str[i]);
 }
 
-/*int main ()
-{
-	
-	int c = 'n';
-	char	*ret;
-	ret = ft_strchr("bonjour", c);
-
-	printf("%s", ret);
-	return 0;
-
-}*/
+// int main ()
+// {
+// 	printf("%s\n", ft_strchr("bconjour", 'r' + 256));
+// 	printf("%s", strchr("bconjour", 'r' + 256));
+// 	return 0;
+// }
