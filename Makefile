@@ -22,12 +22,16 @@ B_SRCS = ft_lstnew.c ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstsize.c \
 
 NAME = libft.a
+
 CC = gcc
+
 OBJS = $(SRCS:.c=.o)
+
 B_OBJS = $(B_SRCS:.c=.o)
+
 CFLAGS = -Wall -Wextra -Werror
 
-all : $(NAME)
+all : $(NAME) bonus
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
