@@ -14,30 +14,28 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
-	int		len;
+	size_t	i;
 
-	str = (char *)s;
-	len = ft_strlen(str);
-	while (str[len] != c)
+	i = ft_strlen((char *)s);
+	if (!s)
+		return (NULL);
+	if (c >= 256)
+		c -= 256;
+	while (i > 0)
 	{
-		if (len < 0)
-			return (NULL);
-		len--;
+		if (s[i] == c)
+			return ((char *)s + i);
+		i--;
 	}
-	return (&str[len]);
+	if (s[i] == c)
+		return ((char *)s + i);
+	return (NULL);
 }
 
-/*int main()
-{
-  
-   const char str[] = "bonjour";
-   const char ch = 's';
-   char *ret;
-
-   ret = ft_strrchr(str, ch);
-
-   printf("%s", ret);
-   
-   return(0);
-}*/
+// int main ()
+// {
+// 	char str2[] = "bonjour";
+// 	// char *str = ft_strrchr(str2, 's');
+// 	char *sttrrr = strrchr(str2, ' ');
+// 	printf("strrchr %s\n", sttrrr);
+// }
