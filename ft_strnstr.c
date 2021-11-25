@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 		return (NULL);
 	if (*s2 == '\0')
 		return ((char *)s1);
-	len2 = ft_strlen((char *)s2);
+	len2 = ft_strlen((const char *)s2);
 	while (*s1 != '\0' && len >= len2)
 	{
 		if (ft_strncmp(s1, s2, len2) == 0)

@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 		n = n * -1;
 		i++;
 	}
-	nu = (unsigned int)n;
+		nu = (unsigned int)n;
 	while (len > i)
 	{
 		res[len - 1] = (nu % 10) + '0';

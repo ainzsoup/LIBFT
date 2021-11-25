@@ -31,14 +31,13 @@ B_OBJS = $(B_SRCS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
-all : $(NAME) bonus
-
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 bonus : $(B_OBJS)
 	ar rc $(NAME) $(B_OBJS)
 
+all : $(NAME) bonus
 clean:
 	rm -f $(OBJS) $(B_OBJS)
 

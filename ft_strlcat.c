@@ -18,10 +18,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	lend;
 	size_t	i;
 
-	if (!dst && src[0] == '\0' && dstsize == 0)
+	if (!dst && dstsize == 0)
 		return (0);
-	lens = ft_strlen((char *)src);
-	lend = ft_strlen((char *)dst);
+	lens = ft_strlen((const char *)src);
+	lend = ft_strlen((const char *)dst);
 	i = 0;
 	if (dstsize <= lend || dstsize == 0)
 		return (dstsize + lens);

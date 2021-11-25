@@ -31,7 +31,7 @@ static char	*ft_allocate(const char *s1, int i, int end, int len)
 	int		k;
 	char	*trimmed;
 
-	k = ft_strlen((char *)s1) - i - end + 1;
+	k = ft_strlen((const char *)s1) - i - end + 1;
 	trimmed = (char *)malloc(sizeof(char) * k);
 	if (!trimmed)
 		return (NULL);
@@ -51,7 +51,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	end = 0;
-	len = ft_strlen((char *)s1);
+	len = ft_strlen((const char *)s1);
 	while (s1[i] && ft_sus((char *)set, s1[i]))
 		i++;
 	while (len > 0 && ft_sus((char *)set, s1[len - 1]))
